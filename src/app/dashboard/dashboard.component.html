@@ -15,11 +15,14 @@
   </div>
 </nav>
 <div class="container">
-  <app-summary-client></app-summary-client>
+  <app-summary-client [clients]="clients"></app-summary-client>
 </div>
 
 <div class="container">
-  <app-list-client></app-list-client>
+  <app-list-client [clients]="clients"></app-list-client>
+</div>
+<div class="container">
+  <app-create-client></app-create-client>
 </div>
 <footer class="footer">
   <div class="container">

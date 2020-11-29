@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Client } from '../model/client';
+import { ClientService } from '../service/client.service';
 
 @Component({
   selector: 'app-list-client',
@@ -8,18 +10,11 @@ import { Client } from '../model/client';
 })
 export class ListClientComponent implements OnInit {
 
-  public clients: Client[] = [];
-  public displayedColumns: string[] = ['firstname', 'lastname', 'bornDate','age','deathDate'];
+  @Input() clients: Observable<Client[]>;
+  public displayedColumns: string[] = ['firstname', 'lastname', 'bornDate', 'age', 'deathDate'];
   constructor() { }
 
   ngOnInit(): void {
-    let c1 = new Client();
-    c1.firstname = "Sleyter";
-    c1.lastname = "Sandoval";
-    c1.bornDate = new Date();
-    c1.deathDate = new Date();
-    c1.age = 26;
-    this.clients.push(c1);
   }
 
 }

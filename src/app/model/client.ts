@@ -2,8 +2,8 @@ export class Client {
 
   firstname:string;
   lastname:string;
-  bornDate:Date;
+  bornDate:string;
   age:number;
-  deathDate:Date;
+  deathDate:string;
 
 }

@@ -12,6 +12,13 @@ import { SummaryClientComponent } from './summary-client/summary-client.componen
 import { AnalysisComponent } from './analysis/analysis.component';
 import { ListClientComponent } from './list-client/list-client.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import { CreateClientComponent } from './create-client/create-client.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +26,8 @@ import { MatTableModule } from '@angular/material/table';
     DashboardComponent,
     SummaryClientComponent,
     AnalysisComponent,
-    ListClientComponent
+    ListClientComponent,
+    CreateClientComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,12 @@ import { MatTableModule } from '@angular/material/table';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule
   ],
   providers: [AngularFireModule],
   bootstrap: [AppComponent]
