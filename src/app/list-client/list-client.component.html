@@ -1,4 +1,12 @@
-<h3>Listado de Clientes</h3>
+<div class="row">
+  <div class="col">
+    <h3>Listado de Clientes</h3>
+  </div>
+  <div class="col">
+    <a class="btn btn-success" routerLink="create"> Agregar Cliente</a>
+  </div>
+</div>
+
 
 <table mat-table [dataSource]="clients" class="col">
     <ng-container matColumnDef="firstname">
@@ -13,7 +21,7 @@
 
     <ng-container matColumnDef="bornDate">
       <th mat-header-cell *matHeaderCellDef> Fec. Nacimiento </th>
-      <td mat-cell *matCellDef="let element"> {{element.bornDate | date:'shortDate'}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.bornDate | date:'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="age">
@@ -22,9 +30,16 @@
     </ng-container>
 
     <ng-container matColumnDef="deathDate">
-        <th mat-header-cell *matHeaderCellDef> Fec. Probable Deceso </th>
-        <td mat-cell *matCellDef="let element"> {{element.deathDate | date:'shortDate'}} </td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef> Fec. Probable Deceso </th>
+      <td mat-cell *matCellDef="let element"> {{element.deathDate | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="detail">
+      <th mat-header-cell *matHeaderCellDef> Detalle </th>
+      <td mat-cell *matCellDef="let element">
+        <a mat-raised-button [routerLink]="['analysis']" [queryParams]="element">Detalle</a>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

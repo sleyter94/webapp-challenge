@@ -18,7 +18,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import { CreateClientComponent } from './create-client/create-client.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AppRoutingModule } from './angular-routing.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { CreateClientComponent } from './create-client/create-client.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
@@ -40,7 +43,10 @@ import { CreateClientComponent } from './create-client/create-client.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [AngularFireModule],
   bootstrap: [AppComponent]

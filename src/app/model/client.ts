@@ -1,9 +1,9 @@
 export class Client {
 
-  firstname:string;
-  lastname:string;
-  bornDate:string;
-  age:number;
-  deathDate:string;
+  firstname: string;
+  lastname: string;
+  bornDate: string;
+  age: string;
+  deathDate: string;
 
 }

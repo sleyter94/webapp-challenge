@@ -11,7 +11,7 @@ import { ClientService } from '../service/client.service';
 export class ListClientComponent implements OnInit {
 
   @Input() clients: Observable<Client[]>;
-  public displayedColumns: string[] = ['firstname', 'lastname', 'bornDate', 'age', 'deathDate'];
+  public displayedColumns: string[] = ['firstname', 'lastname', 'bornDate', 'age', 'detail'];
   constructor() { }
 
   ngOnInit(): void {

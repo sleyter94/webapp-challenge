@@ -1,1 +1,10 @@
-<p>analysis works!</p>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">Nombre: {{client?.firstname}}</li>
+    <li class="list-group-item">Apellido: {{client?.lastname}}</li>
+    <li class="list-group-item">F. de Nacimiento: {{client?.bornDate | date:'dd/MM/yyyy' }}</li>
+    <li class="list-group-item">Edad: {{client?.age }}</li>
+    <li class="list-group-item">F. probable de Muerte: {{ client?.deathDate | date: 'dd/MM/yyyy'}}</li>
+  </ul>
+  <button mat-button color="accent" routerLink="">Regresar</button>
+</div>

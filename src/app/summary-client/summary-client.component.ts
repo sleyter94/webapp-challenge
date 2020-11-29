@@ -17,9 +17,9 @@ export class SummaryClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.clients.subscribe(
-      cs => {
-        this.mean = cs.length ? _.meanBy(cs, (c) => c.age) : 0;
-        this.std = Math.sqrt(_.sumBy(cs, (c) => (Math.abs(c.age - this.mean))/cs.length));
+      (cs: Client[]) => {
+        this.mean = cs.length ? _.meanBy(cs, (c: Client) => parseInt(c.age , 10)) : 0;
+        this.std = Math.sqrt(_.sumBy(cs, (c) => (Math.pow(parseInt(c.age , 10) - this.mean, 2)) / cs.length));
       }
     );
 
